@@ -60,66 +60,6 @@ const SideBar = (props) => {
                 </div>
             </div>
 
-            <div className="category-block d-flex flex-column">
-                <h5 className="mb-3">Categories</h5>
-
-                <div className="category-block-link">
-                    Drinking water
-                    <span className="badge">20</span>
-                </div>
-
-                <div className="category-block-link">
-                    Food Donation
-                    <span className="badge">30</span>
-                </div>
-
-                <div className="category-block-link">
-                    Children Education
-                    <span className="badge">10</span>
-                </div>
-
-                <div className="category-block-link">
-                    Poverty Development
-                    <span className="badge">15</span>
-                </div>
-
-                <div className="category-block-link">
-                    Clothing Donation
-                    <span className="badge">20</span>
-                </div>
-            </div>
-
-            <div className="tags-block">
-                <h5 className="mb-3">Tags</h5>
-
-                <div className="tags-block-link">
-                    Donation
-                </div>
-
-                <div className="tags-block-link">
-                    Clothing
-                </div>
-
-                <div className="tags-block-link">
-                    Food
-                </div>
-
-                <div className="tags-block-link">
-                    Children
-                </div>
-
-                <div className="tags-block-link">
-                    Education
-                </div>
-
-                <div className="tags-block-link">
-                    Poverty
-                </div>
-
-                <div className="tags-block-link">
-                    Clean Water
-                </div>
-            </div>
         </div>
     )
 }
