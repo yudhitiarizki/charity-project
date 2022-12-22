@@ -151,10 +151,10 @@ const Home = () => {
         <section class="section-padding section-bg" id="section_2">
           <div class="container">
             <div class="row">
-
+{/* 
               <div class="col-lg-6 col-12 mb-5 mb-lg-0">
                 <img src={`${process.env.PUBLIC_URL}/assets/images/group-people-volunteering-foodbank-poor-people.jpg`} class="custom-text-box-image img-fluid" alt="" />
-              </div>
+              </div> */}
 
               <div class="col-lg-6 col-12">
                 <div class="custom-text-box">
