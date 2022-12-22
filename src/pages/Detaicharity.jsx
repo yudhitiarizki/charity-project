@@ -2,6 +2,7 @@ import React from "react";
 import MyCharityCards from "../components/Cards/MyCharityCards";
 import { Link } from "react-router-dom";
 
+
 const Detailcharity = () => {
   return (
     <main>
@@ -340,6 +341,5 @@ const Detailcharity = () => {
       </section>
     </main>
   );
-};
 
 export default Detailcharity;

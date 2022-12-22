@@ -5,6 +5,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCharityBySlug } from '../redux/actions/charity';
 import { getPaymentBySlug } from '../redux/actions/payment';
+import { createDonate } from '../redux/actions/donate';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../components/assets/style/style.css';
 import '../components/assets/style/bootstrap-icons.css'
@@ -13,36 +14,59 @@ const Donation = () => {
     const dispatch = useDispatch()
     
     const navigate = useNavigate();
-
+    
     const charities = useSelector(state => state.charity);
     const payments = useSelector(state => state.payment);
-    const { isLoggedIn } = useSelector(state => state.auth);
+    const { message } = useSelector(state => state.message)
+    const { isLoggedIn, user } = useSelector(state => state.auth);
 
     const [anonym, setanonym] = useState(true);
-    const [filePay, setfilePay] = useState();
     const [payment, setpayment] = useState({
-        id: '',
         method: "",
         number: ""
     });
+    const [donate, setdonate] = useState('');
+    const [image, setimage] = useState('');
+    const [paymentId, setpaymentid] = useState('');
+    const [thumb, setthumb] = useState('');
+    const [userId, setUserId] = useState(user.userId);
 
 
-    const onChangeFile = (event) => {
-        var FileNameInput = event.target.files[0];
-        setfilePay(FileNameInput);
+    const handleFileChange = (event) => {
+        const selectedFile = event.target.files[0];
+
+        setthumb(selectedFile.name);
+
+        const reader = new FileReader();
+        reader.readAsDataURL(selectedFile);
+        reader.onload = () => {
+            const fileData = reader.result;
+            setimage(fileData);
+        }
     };
+
+    const onChangePayment = (paymentId, method, number) => {
+        setpayment({method:method, number:number});
+        setpaymentid(paymentId);
+    } 
 
     const { slug } = useParams()
 
     useEffect(() => {
-        dispatch(getCharityBySlug('asdasd-1671387737813'));
-        dispatch(getPaymentBySlug('asdasd-1671387737813'));
+        dispatch(getCharityBySlug(slug));
+        dispatch(getPaymentBySlug(slug));
     }, [dispatch]);
 
 
     const login = () => {
-        console.log('ok')
         navigate('/login')
+    }
+
+    const onSubmit = () => {
+        if (anonym){
+            setUserId(0);
+        };
+        dispatch(createDonate(donate, paymentId, userId, image, slug))
     }
 
     return (
@@ -60,6 +84,22 @@ const Donation = () => {
                                     <h3 className="mb-4">Donation</h3>
 
                                     <div className="row">
+                                        {message.message && (
+                                            message.status < 400 ? (
+                                                <div className="form-group mt-0">
+                                                    <div className="alert alert-success" role="alert">
+                                                        {message.message}
+                                                    </div>
+                                                </div>
+                                            ) : (
+                                                <div className="form-group mt-0">
+                                                    <div className="alert alert-danger" role="alert">
+                                                        {message.message}
+                                                    </div>
+                                                </div>
+                                            )
+                                        )}
+
                                         <div className="col-lg-12 col-12">
                                             <h5 className="mb-3">Personal Info</h5>
                                         </div>
@@ -111,7 +151,7 @@ const Donation = () => {
                                                 <span className="input-group-text" id="basic-addon1">Rp</span>
 
                                                 <input type="text" className="form-control" placeholder="Amount"
-                                                    aria-label="Username" aria-describedby="basic-addon1" />
+                                                    aria-label="Username" aria-describedby="basic-addon1" onChange={(event) => {setdonate(event.target.value)}} />
                                             </div>
                                         </div>
 
@@ -128,7 +168,7 @@ const Donation = () => {
                                                     <div className="col-lg-3 col-6 form-check-group form-check-group-donation-frequency bca">
                                                         <div className="form-check form-check-radio">
                                                             <input className="form-check-input" type="radio" name="payment"
-                                                                id="bca" onChange={() => {setpayment({method:pay.method, number:pay.number, id: pay.paymentId}) }} />
+                                                                id="bca" onChange={() => {onChangePayment(pay.paymentId, pay.method, pay.number)}} />
 
                                                             <label className="form-check-label" htmlFor="bca">
                                                                 {pay.method}
@@ -145,10 +185,10 @@ const Donation = () => {
 
                                         <div class="col-lg-12 col-12">
                                             <div class="input-group input-group-file mb-0">
-                                                <input type="file" class="form-control" id="inputGroupFile02" onChange={onChangeFile}/>
+                                                <input type="file" class="form-control" id="inputGroupFile02" onChange={handleFileChange}/>
                                                 
                                                 <label class="input-group-text" id="custom-label-file" for="inputGroupFile02">
-                                                    {filePay ? filePay.name : "Upload Proof of Payment" }
+                                                    {thumb ? thumb : "Upload Proof of Payment" }
                                                 </label>
 
                                                 <i class="bi-cloud-arrow-up ms-auto"></i>
@@ -158,7 +198,7 @@ const Donation = () => {
 
                                         <div className="col-lg-12 col-12 mt-3">
 
-                                            <button type="button" className="form-control mt-2">Submit Donation</button>
+                                            <button type="button" onClick={()=> {onSubmit()}} className="form-control mt-2">Submit Donation</button>
 
                                         </div>
                                     </div>
