@@ -17,7 +17,7 @@ const Home = () => {
                                         class="carousel-image img-fluid" alt="..." />
 
                                     <div class="carousel-caption d-flex flex-column justify-content-end">
-                                        <h1>be a Kind Heart</h1>
+                                        <h1>aaabe a Kind Heart</h1>
 
                                         <p>Professional charity Website</p>
                                     </div>
