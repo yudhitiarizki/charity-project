@@ -156,7 +156,7 @@ const Home = () => {
                 <img src={`${process.env.PUBLIC_URL}/assets/images/group-people-volunteering-foodbank-poor-people.jpg`} class="custom-text-box-image img-fluid" alt="" />
               </div> */}
 
-              <div class="col-lg-6 col-12">
+              <div class="col-lg-12 col-12">
                 <div class="custom-text-box">
                   <h2 class="mb-2">Our Story</h2>
 
