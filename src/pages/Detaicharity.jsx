@@ -341,5 +341,5 @@ const Detailcharity = () => {
       </section>
     </main>
   );
-
+}
 export default Detailcharity;
