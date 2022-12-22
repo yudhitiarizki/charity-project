@@ -8,6 +8,7 @@ import DetailPage from "../pages/DetailPage";
 import ListCharity from "../pages/ListCharity";
 import MyCharity from "../pages/MyCharity";
 import Donation from "../pages/Donation";
+import Detailcharity from "../pages/Detaicharity";
 import NotFound from "../components/notfound/NotFound";
 
 const Router = () => {
@@ -19,7 +20,7 @@ const Router = () => {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/charity" element={<ListCharity />} />
         <Route exact path="/signup" element={<Signup />} />
-        <Route exact path="/detail" element={<DetailPage />} />
+        <Route exact path="/detail" element={<Detailcharity />} />
         <Route exact path="/donation/:slug" element={<Donation />} />
         <Route exact path='*' element={<NotFound />} />
         <Route exact path="/mycharity" element={<MyCharity />} />

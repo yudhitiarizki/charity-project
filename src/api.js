@@ -7,7 +7,7 @@ if (user){
 }
 
 export default axios.create({
-    baseURL: 'http://localhost:3001',
+    baseURL: 'http://servermini.yudhitiarizki.my.id',
     headers: {
         "Authorization": `Bearer ${token}`
     }

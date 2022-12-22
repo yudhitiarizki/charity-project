@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CharityCards = (props) => {
-    const { image, title, description, raised, goal } = props;
+    const { image, title, description, raised, goal, slug } = props;
     const progress = raised / goal * 100;
 
     const rupiah = (number)=>{
@@ -44,7 +44,7 @@ const CharityCards = (props) => {
 
                     <div className='col-12 row m-0'> 
                         <Link to="/donation" class="custom-btn btn col-6">Detail</Link>
-                        <Link to="/donation" class="custom-btn btn col-6">Donate</Link>
+                        <Link to={`/donation/${slug}`} class="custom-btn btn col-6">Donate</Link>
                     </div>
 
                 </div>

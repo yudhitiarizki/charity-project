@@ -19,6 +19,7 @@ const ListCharity = () => {
         dispatch(getCharity());
     }, [dispatch]);
 
+
     const onChangeSearch = (event) => {
         setsearch(event.target.value);
         charities = charities.filter(charity => {
@@ -51,14 +52,16 @@ const ListCharity = () => {
                                 title={charity.title} 
                                 description={charity.description}
                                 raised={charity.raise}
-                                goal={charity.goal} />
+                                goal={charity.goal}
+                                slug={charity.slug} />
                         )) : charities.map((charity, index) => (
                             <CharityCards 
                                 image={charity.image} 
                                 title={charity.title} 
                                 description={charity.description}
                                 raised={charity.raise}
-                                goal={charity.goal} />
+                                goal={charity.goal}
+                                slug={charity.slug} />
                         )) }
                     </div>
 

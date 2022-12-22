@@ -54,7 +54,7 @@ const MyCharity = () => {
                                                 </div>
                                             ) }
                                             
-                                            <button type="button" class="btn custom-btn-add col-5 col-md-4 col-lg-2 m-2 custom-m" data-bs-toggle="modal" data-bs-target="#payment">Create</button>
+                                            <button type="button" class="btn custom-btn-add col-5 col-md-4 col-lg-2 m-2 custom-m" data-bs-toggle="modal" data-bs-target="#payment">Payments</button>
                                             {
                                                 payments.length > 1 ? (
                                                     <button type="button" class="btn custom-btn-add col-5 col-md-4 col-lg-2 m-2 custom-m" data-bs-toggle="modal" data-bs-target="#Charity">Create</button>
