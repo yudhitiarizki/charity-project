@@ -22,9 +22,9 @@ const Navbar = () => {
                 <div className="container">
                     <div className="navbar-brand">
                         <img src={`${process.env.PUBLIC_URL}/assets/images/logo.png`} className="logo img-fluid" alt="Kind Heart Charity"/>
-                        <span>
-                            Kind Heart Charity
-                            <small>Non-profit Organization</small>
+                        &nbsp; <span>
+                            Love Charity
+                            <small>Charity Mini Project from us</small>
                         </span>
                     </div>
 
@@ -60,10 +60,6 @@ const Navbar = () => {
                                     <li><div className="dropdown-item" >News Detail</div></li>
                                 </ul>
                             </li> */}
-
-                            <li className="nav-item">
-                                <div className="nav-link click-scroll" >Contact</div>
-                            </li>
 
                             <li className="nav-item ms-3">
                                 { isLoggedIn ? 
