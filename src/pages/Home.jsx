@@ -1,10 +1,12 @@
 import React from 'react';
 import MyCharityCards from '../components/Cards/MyCharityCards';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/navbar/Navbar';
 
 const Home = () => {
     return (
         <main>
+           <Navbar> </Navbar>
         <section class="hero-section hero-section-full-height">
             <div class="container-fluid">
                 <div class="row">
@@ -13,18 +15,18 @@ const Home = () => {
                         <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src={`${process.env.PUBLIC_URL}/assets/images/slide/volunteer-helping-with-donation-box.jpg`}
+                                    <img src={`${process.env.PUBLIC_URL}/assets/images/slide/slide_1.jpg`}
                                         class="carousel-image img-fluid" alt="..." />
 
                                     <div class="carousel-caption d-flex flex-column justify-content-end">
-                                        <h1>aaabe a Kind Heart</h1>
+                                        <h1>be a Kind Heart</h1>
 
-                                        <p>Professional charity Website</p>
+                                        <p>A Mini Project about Charity</p>
                                     </div>
                                 </div>
 
                                 <div class="carousel-item">
-                                    <img src={`${process.env.PUBLIC_URL}/assets/images/slide/volunteer-selecting-organizing-clothes-donations-charity.jpg`}
+                                    <img src={`${process.env.PUBLIC_URL}/assets/images/slide/slide_2.jpg`}
                                         class="carousel-image img-fluid" alt="..." />
 
                                     <div class="carousel-caption d-flex flex-column justify-content-end">
@@ -34,13 +36,13 @@ const Home = () => {
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src={`${process.env.PUBLIC_URL}/assets/images/slide/medium-shot-people-collecting-donations.jpg`}
+                                    <img src={`${process.env.PUBLIC_URL}/assets/images/slide/slide_3.jpg`}
                                         class="carousel-image img-fluid" alt="..." />
 
                                     <div class="carousel-caption d-flex flex-column justify-content-end">
                                         <h1>Humanity</h1>
 
-                                        <p>Please tell your friends about our website</p>
+                                        <p>Please tell anyone about this project</p>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +71,7 @@ const Home = () => {
                 <div class="row">
 
                     <div class="col-lg-10 col-12 text-center mx-auto">
-                        <h2 class="mb-5">Welcome to Kind Heart Charity</h2>
+                        <h2 class="mb-5">Welcome to Love Charity</h2>
                     </div>
 
                     <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
@@ -121,7 +123,7 @@ const Home = () => {
                 <div class="row">
 
                     <div class="col-lg-6 col-12 mb-5 mb-lg-0">
-                        <img src={`${process.env.PUBLIC_URL}/assets/images/group-people-volunteering-foodbank-poor-people.jpg`}
+                        <img src={`${process.env.PUBLIC_URL}/assets/images/TEAM.png`}
                             class="custom-text-box-image img-fluid" alt=""/>
                     </div>
 
@@ -129,11 +131,9 @@ const Home = () => {
                         <div class="custom-text-box">
                             <h2 class="mb-2">Our Story</h2>
 
-                            <h5 class="mb-3">Kind Heart Charity, Non-Profit Organization</h5>
+                            <h5 class="mb-3">TeamEleven</h5>
 
-                            <p class="mb-0">This is a Bootstrap 5.2.2 CSS template for charity organization websites.
-                                You can feel free to use it. Please tell your friends about TemplateMo website. Thank
-                                you.</p>
+                            <p class="mb-0">We are from different islands and met at the ZEP. we want to help everyone who wants to do charity</p>
                         </div>
 
                         <div class="row">
@@ -141,17 +141,17 @@ const Home = () => {
                                 <div class="custom-text-box mb-lg-0">
                                     <h5 class="mb-3">Our Mission</h5>
 
-                                    <p>Sed leo nisl, posuere at molestie ac, suscipit auctor quis metus</p>
+                                    <p>helping everyone who wants to do charity but don't know where to start without looking</p>
 
                                     <ul class="custom-list mt-2">
                                         <li class="custom-list-item d-flex">
                                             <i class="bi-check custom-text-box-icon me-2"></i>
-                                            Charity Theme
+                                            Old
                                         </li>
 
                                         <li class="custom-list-item d-flex">
                                             <i class="bi-check custom-text-box-icon me-2"></i>
-                                            Semantic HTML
+                                            Young
                                         </li>
                                     </ul>
                                 </div>
@@ -166,14 +166,14 @@ const Home = () => {
                                             <span class="counter-number-text"></span>
                                         </div>
 
-                                        <span class="counter-text">Founded</span>
+                                        <span class="counter-text">Main Destination</span>
                                     </div>
 
                                     <div class="counter-thumb mt-4">
                                         <div class="d-flex">
                                             <span class="counter-number" data-from="1" data-to="120"
                                                 data-speed="1000"></span>
-                                            <span class="counter-number-text">B</span>
+                                            <span class="counter-number-text">Full</span>
                                         </div>
 
                                         <span class="counter-text">Donations</span>
@@ -250,7 +250,7 @@ const Home = () => {
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="carousel-caption">
-                                        <h4 class="carousel-title">We are making a charity website</h4>
+                                      <h4 class="carousel-title">We are making a charity website. Just 'IT'</h4>
 
                                         <small class="carousel-name"><span class="carousel-name-title">Team</span>
                                             Eleven</small>
